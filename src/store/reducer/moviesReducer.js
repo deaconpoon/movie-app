@@ -2,8 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 import MoviesList from "../../utils/sample.json";
 
 const moviesSlice = createSlice({
-  slice: "movies",
-  initialState: [],
+  name: "movies",
+  initialState: ["hello"],
   reducers: {
     sortProgramType(state, action) {
       /* return state.entries.map((entry) => entry.programType === action.payload); */
@@ -15,4 +15,4 @@ const { actions, reducer } = moviesSlice;
 
 export const { sortProgramType } = actions;
 
-export default reducer;
+export default moviesSlice.reducer;

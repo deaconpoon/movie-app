@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { MovieCard, DetailModal } from "../../components/layout";
 
 const MoviesPage = ({ moviesList, getFunFact }) => {
