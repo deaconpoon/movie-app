@@ -14,7 +14,7 @@ const Image = styled.img`
   object-fit: contain;
 `;
 
-const DetailPage = ({
+const DetailModal = ({
   isOpen,
   image,
   title,
@@ -36,4 +36,4 @@ const DetailPage = ({
     </ReactModal>
   );
 };
-export default DetailPage;
+export default DetailModal;
