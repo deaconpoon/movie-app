@@ -1,6 +1,7 @@
+import { useState } from "react";
 import { MovieCard, DetailModal } from "../../components/layout";
 
-const MoviesPage = ({ moviesList }) => {
+const MoviesPage = ({ moviesList, getFunFact }) => {
   return (
     <>
       {moviesList.entries.map((entry) => (

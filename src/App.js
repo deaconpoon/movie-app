@@ -15,7 +15,7 @@ function App() {
   const loadedMoviesList = JSON.stringify(MoviesList);
   const [moviesList, setMoviesList] = useState(JSON.parse(loadedMoviesList));
   const [num, setNum] = useState(0);
-  /*   console.log(moviesList); */
+  console.log(moviesList);
   const getFunFact = (num) => {
     axios.get(`${baseURL + num}/year`).then((response) => response.data);
   };
@@ -27,7 +27,7 @@ function App() {
           <GlobalStyle />
           <div className="App layout">
             <Header />
-            <button onClick={() => getFunFact(1988)} />
+            <button onClick={() => getFunFact(1988)}>click me</button>
             <Switch>
               <main className="grid">
                 <Route path="/404">
