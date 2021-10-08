@@ -1,5 +1,5 @@
-import { configureStore } from "@reduxjs/toolkit";
-
+/* import { configureStore } from "@reduxjs/toolkit";
+import moviesReducer from "./reducer/moviesReducer";
 const store = configureStore({
   reducer: {
     movies: moviesReducer,
@@ -7,3 +7,4 @@ const store = configureStore({
 });
 
 export default store;
+ */

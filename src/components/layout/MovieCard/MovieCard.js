@@ -15,7 +15,7 @@ const Image = styled.img`
 
 const MovieCard = ({ image, title }) => (
   <Container>
-    <img src={image}></img>
+    <Image src={image}></Image>
 
     <p>{title}</p>
   </Container>

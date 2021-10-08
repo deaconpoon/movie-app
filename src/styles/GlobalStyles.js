@@ -102,8 +102,8 @@ const GlobalStyle = createGlobalStyle`
     }
     .grid {
         display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto;
     }
 `;
 

@@ -1,8 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import MoviesList from "../../utils/sample.json";
 
-const movies = JSON.parse(MoviesList);
-
 const moviesSlice = createSlice({
   slice: "movies",
   initialState: [],
