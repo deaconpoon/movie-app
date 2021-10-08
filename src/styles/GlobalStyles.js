@@ -96,7 +96,15 @@ const GlobalStyle = createGlobalStyle`
         color: ${({ theme }) => theme.colors.tertiary};
         opacity: 0.1;
       }
-
+    .layout {
+        width: 80vw;
+        margin: auto;
+    }
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr;
+    }
 `;
 
 export default GlobalStyle;
