@@ -16,21 +16,22 @@ const Image = styled.img`
   object-fit: contain;
 `;
 
-const MovieCard = ({ image, title, movie }) => {
+const MovieCard = ({ image, title, id }) => {
   const dispatch = useDispatch();
 
-  function selectMovie(movie) {
-    dispatch(select(movie));
+  function selectMovie(id) {
+    dispatch(select(id));
   }
-  const handleSelectedMovie = (e, movie) => {
-    selectMovie(movie);
+  const handleSelectedMovie = (id) => {
+    selectMovie(id);
     console.log("clicked");
   };
 
   return (
-    <Container>
+    <Container key={id}>
       <Image src={image}></Image>
       <p>{title}</p>
+      <button onClick={() => handleSelectedMovie(id)}>clickme</button>
     </Container>
   );
 };

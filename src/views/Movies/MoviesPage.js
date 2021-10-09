@@ -5,11 +5,11 @@ import { useDispatch } from "react-redux";
 const MoviesPage = ({ moviesList }) => {
   return (
     <>
-      {moviesList.map((movie) => (
+      {moviesList.map(({ title, images, id }) => (
         <MovieCard
-          movie={movie}
-          title={movie.title}
-          image={movie.images["Poster Art"].url}
+          id={id}
+          title={title}
+          image={images["Poster Art"].url}
         ></MovieCard>
       ))}
       <div>movie</div>

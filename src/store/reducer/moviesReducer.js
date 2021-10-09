@@ -24,7 +24,14 @@ const moviesSlice = createSlice({
       );
       state.filteredMoviesList = filteredMoviesList;
     },
-    select: (state, { payload }) => (state.selectedMovie = payload),
+    /*     select: (state, action) =>
+      (state.selectedMovie = state.moviesList.filter(
+        ({ id }) => id === action.payload
+      )), */
+    select: (state, { payload }) => {
+      const selectedMovie = state.moviesList.filter(({ id }) => id === payload);
+      state.selectedMovie = selectedMovie;
+    },
   },
 });
 
