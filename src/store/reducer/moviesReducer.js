@@ -1,8 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { v4 as uuidv4 } from "uuid";
 import MoviesList from "../../utils/sample.json";
 
+const moviesList = JSON.parse(JSON.stringify(MoviesList)).entries;
+
+const moviesListWithID = moviesList.map((movie) => {
+  const id = uuidv4();
+  return { ...movie, ["id"]: id };
+});
+
 const initialState = {
-  moviesList: JSON.parse(JSON.stringify(MoviesList)).entries,
+  moviesList: moviesListWithID,
   filteredMoviesList: null,
   selectedMovie: null,
 };

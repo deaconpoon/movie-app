@@ -24,8 +24,7 @@ function App() {
   );
   const [year, setYear] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
-  const [sortedMoviesList, setSortedMoviesList] = useState(null);
-  const [sortedSeriesList, setSortedSeriesList] = useState(null);
+
   const funFact = useSelector((state) => state.funFact);
 
   function sortList(type) {
