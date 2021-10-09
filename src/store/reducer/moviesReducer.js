@@ -1,32 +1,27 @@
 import { createSlice } from "@reduxjs/toolkit";
 import MoviesList from "../../utils/sample.json";
 
-/* const initialState = JSON.parse(JSON.stringify(MoviesList)).entries; */
 const initialState = {
   moviesList: JSON.parse(JSON.stringify(MoviesList)).entries,
-  filteredMoviesList: {},
-  selectedMovie: {},
+  filteredMoviesList: null,
+  selectedMovie: null,
 };
 const moviesSlice = createSlice({
   name: "movies",
   initialState: initialState,
   reducers: {
-    sortProgramType: (state, action) => {
+    sort: (state, { payload }) => {
       const filteredMoviesList = state.moviesList.filter(
-        ({ programType }) => programType === action.payload
+        ({ programType }) => programType === payload
       );
       state.filteredMoviesList = filteredMoviesList;
     },
-    /* return state.entries.filter(
-        (entry) => entry.programType === action.payload
-      ); */
-    /*  state.filter(({ programType }) => programType === action.payload); */
-    /* return state.filter(({ programType }) => programType === action.payload); */
+    select: (state, { payload }) => (state.selectedMovie = payload),
   },
 });
 
 const { actions, reducer } = moviesSlice;
 
-export const { sortProgramType } = actions;
+export const { sort, select } = actions;
 
 export default moviesSlice.reducer;

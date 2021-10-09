@@ -12,6 +12,7 @@ const MoviesPage = ({ moviesList, handleSelectedMovie }) => {
           image={entry.images["Poster Art"].url}
         ></MovieCard>
       ))}
+      <div>movie</div>
     </>
   );
 };
