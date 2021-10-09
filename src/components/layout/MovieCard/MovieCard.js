@@ -13,10 +13,9 @@ const Image = styled.img`
   object-fit: contain;
 `;
 
-const MovieCard = ({ image, title }) => (
-  <Container>
+const MovieCard = ({ image, title, handleSelectedMovie }) => (
+  <Container onClick={() => handleSelectedMovie()}>
     <Image src={image}></Image>
-
     <p>{title}</p>
   </Container>
 );
