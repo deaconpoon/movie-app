@@ -11,8 +11,8 @@ const baseURL = "http://numbersapi.com/";
 export const getFunFact = createAsyncThunk(
   "funFact/getFunFact",
   async (year) => {
-    const funFact = fetch(`${baseURL + year}/year`).then((res) => {
-      if (!res.ok) throw Error(res.statusText);
+    const funFact = axios.get(`${baseURL + year}/year`).then((res) => {
+      /*  if (!res.ok) throw Error(res.statusText); */
       return res.data;
     });
 
@@ -23,7 +23,7 @@ export const getFunFact = createAsyncThunk(
 const funFactSlice = createSlice({
   name: "funFact",
   initialState: {
-    funFact: "",
+    funFact: null,
     status: null,
   },
   extraReducers: {
@@ -31,8 +31,8 @@ const funFactSlice = createSlice({
       state.status = "loading";
     },
     [getFunFact.fulfilled]: (state, { payload }) => {
-      state.funFact = payload;
       state.status = "success";
+      state.funFact = payload;
     },
     [getFunFact.rejected]: (state, action) => {
       state.status = "failed";
