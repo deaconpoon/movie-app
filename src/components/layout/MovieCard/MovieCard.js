@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { useDispatch } from "react-redux";
 import { select } from "../../../store/reducer/moviesReducer";
-import { useDebugValue } from "react";
+import { getFunFact } from "../../../store/reducer/funFactReducer";
 
 const Container = styled.li`
   width: 10vw;
@@ -16,22 +16,23 @@ const Image = styled.img`
   object-fit: contain;
 `;
 
-const MovieCard = ({ image, title, id }) => {
+const MovieCard = ({ image, title, id, releaseYear }) => {
   const dispatch = useDispatch();
 
-  function selectMovie(id) {
+  const handleSelectedMovie = (id, releaseYear) => {
     dispatch(select(id));
-  }
-  const handleSelectedMovie = (id) => {
-    selectMovie(id);
-    console.log("clicked");
+    console.log(id);
+    dispatch(getFunFact(releaseYear));
+    console.log(releaseYear);
   };
 
   return (
     <Container key={id}>
       <Image src={image}></Image>
       <p>{title}</p>
-      <button onClick={() => handleSelectedMovie(id)}>clickme</button>
+      <button onClick={() => handleSelectedMovie(id, releaseYear)}>
+        clickme
+      </button>
     </Container>
   );
 };

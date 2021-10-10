@@ -1,5 +1,4 @@
 import { ThemeProvider } from "styled-components";
-import axios from "axios";
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
