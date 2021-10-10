@@ -13,7 +13,6 @@ import { getFunFact } from "./store/reducer/funFactReducer";
 
 function App() {
   const dispatch = useDispatch();
-  const baseURL = "http://numbersapi.com/";
 
   const movies = useSelector((state) => state.movies.moviesList);
   const sortedMovies = movies.filter(
@@ -22,10 +21,7 @@ function App() {
   const sortedSeries = movies.filter(
     ({ programType }) => programType === "series"
   );
-  const [year, setYear] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
-
-  const funFact = useSelector((state) => state.funFact);
 
   function sortList(type) {
     dispatch(sort(type));
@@ -33,7 +29,10 @@ function App() {
   function selectMovie(movie) {
     dispatch(select(movie));
   }
-
+  function handleFunFact(year) {
+    const funFact = dispatch(getFunFact(year));
+    console.log(funFact);
+  }
   /*   const getFunFact = (num) => {
     axios.get(`${baseURL + num}/year`).then((response) => response.data);
   }; */
@@ -43,10 +42,10 @@ function App() {
     console.log(funFact);
   }; */
 
-  const handleFunFact = (num) => {
+  /*   const handleFunFact = (num) => {
     setYear(num);
     return axios.get(`${baseURL + num}/year`).then((response) => response.data);
-  };
+  }; */
   /*   const handleSelectedMovie = (e, movie) => {
     e.preventDefault();
     setSelectedMovie(movie);
@@ -66,7 +65,8 @@ function App() {
           <GlobalStyle />
           <div className="App layout">
             <Header />
-            <button onClick={() => sortList("series")}>click me</button>
+            <button onClick={() => handleFunFact("1988")}>click me</button>
+
             <Switch>
               <main className="grid">
                 <Route path="/404">
