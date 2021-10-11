@@ -6,23 +6,14 @@ import logger from "redux-logger";
 import rootReducer from "./reducer/rootReducer";
 import moviesReducer from "./reducer/moviesReducer";
 import funFactReducer from "./reducer/funFactReducer";
-
-/* const store = createStore(
-  rootReducer,
-  composeWithDevTools(applyMiddleware(thunk))
-); */
-
-/* function loggerMiddleware() {
-  return function (next) {
-    return function (action) {
-      console.log(action);
-      next(action);
-    };
-  };
-} */
+import detailModalReducer from "./reducer/detailModalReducer";
 
 const store = configureStore({
-  reducer: { movies: moviesReducer, funFact: funFactReducer },
+  reducer: {
+    movies: moviesReducer,
+    funFact: funFactReducer,
+    detailModal: detailModalReducer,
+  },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
 });
 

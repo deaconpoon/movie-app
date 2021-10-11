@@ -3,16 +3,10 @@ import axios from "axios";
 
 const baseURL = "http://numbersapi.com/";
 
-/* export const getFunFact = (year) =>
-  createAsyncThunk("movies/getFunFact", async () => {
-    return axios.get(`${baseURL + year}/year`).then((res) => res.data);
-  }); */
-
 export const getFunFact = createAsyncThunk(
   "funFact/getFunFact",
   async (year) => {
     const funFact = axios.get(`${baseURL + year}/year`).then((res) => {
-      /*  if (!res.ok) throw Error(res.statusText); */
       return res.data;
     });
 

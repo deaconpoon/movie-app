@@ -1,7 +1,8 @@
 import styled from "styled-components";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { select } from "../../../store/reducer/moviesReducer";
 import { getFunFact } from "../../../store/reducer/funFactReducer";
+import { toggleIsOpen } from "../../../store/reducer/detailModalReducer";
 
 const Container = styled.li`
   width: 10vw;
@@ -18,12 +19,16 @@ const Image = styled.img`
 
 const MovieCard = ({ image, title, id, releaseYear }) => {
   const dispatch = useDispatch();
+  const detailModalisOpen = useSelector((state) => state.detailModal.isOpen);
 
+  //move to helper func
   const handleSelectedMovie = (id, releaseYear) => {
     dispatch(select(id));
     console.log(id);
     dispatch(getFunFact(releaseYear));
     console.log(releaseYear);
+    dispatch(toggleIsOpen());
+    console.log(detailModalisOpen);
   };
 
   return (

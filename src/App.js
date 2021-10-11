@@ -7,12 +7,10 @@ import Theme from "./styles/Theme";
 import GlobalStyle from "./styles/GlobalStyles";
 import { Header, Footer, DetailModal } from "./components/layout";
 import { HomePage, ErrorPage, MoviesPage } from "./views";
-import { sort, select } from "./store/reducer/moviesReducer";
 import { getFunFact } from "./store/reducer/funFactReducer";
 
 function App() {
   const dispatch = useDispatch();
-
   const movies = useSelector((state) => state.movies.moviesList);
   const sortedMovies = movies.filter(
     ({ programType }) => programType === "movie"
@@ -20,43 +18,17 @@ function App() {
   const sortedSeries = movies.filter(
     ({ programType }) => programType === "series"
   );
-  const [isOpen, setIsOpen] = useState(false);
-
-  function sortList(type) {
-    dispatch(sort(type));
-  }
-  function selectMovie(movie) {
-    dispatch(select(movie));
-  }
+  /*   const selectedMovie = useSelector((state) => state.movies.selectedMovie);
+  const { title, description, programType, images, releaseYear } =
+    selectedMovie;
+  const funFact = useSelector((state) => state.funFact.funFact);
+  const isOpen = useSelector((state) => state.detailModal.isOpen);
+ */
   function handleFunFact(year) {
     const funFact = dispatch(getFunFact(year));
     console.log(funFact);
   }
-  /*   const getFunFact = (num) => {
-    axios.get(`${baseURL + num}/year`).then((response) => response.data);
-  }; */
 
-  /*   const handleFunFact = () => {
-    dispatch(getFunFact);
-    console.log(funFact);
-  }; */
-
-  /*   const handleFunFact = (num) => {
-    setYear(num);
-    return axios.get(`${baseURL + num}/year`).then((response) => response.data);
-  }; */
-  /*   const handleSelectedMovie = (e, movie) => {
-    e.preventDefault();
-    setSelectedMovie(movie);
-  };
- */
-  /*   useEffect(() => {
-    sortList("movie");
-    setSortedMoviesList(movies.filteredMoviesList);
-    sortList("series");
-    setSortedSeriesList(movies.filteredMoviesList);
-  }, []);
- */
   return (
     <>
       <Router>
@@ -88,7 +60,15 @@ function App() {
               </main>
             </Switch>
             <Footer />
-            <DetailModal />
+            <DetailModal
+            /*  title={title}
+              description={description}
+              programType={programType}
+              images={images}
+              funFact={funFact}
+              isOpen={isOpen}
+              releaseYear={releaseYear} */
+            />
           </div>
         </ThemeProvider>
       </Router>
