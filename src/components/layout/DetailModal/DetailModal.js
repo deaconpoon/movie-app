@@ -1,7 +1,9 @@
 import ReactModal from "react-modal";
 import styled from "styled-components";
+/* import { Button, Header, Image, Modal } from "semantic-ui-react"; */
 import { useSelector, useDispatch } from "react-redux";
 import { toggleIsOpen } from "../../../store/reducer/detailModalReducer";
+import { MovieCard } from "../";
 
 const Container = styled.div`
   width: 100%;
@@ -40,14 +42,24 @@ const DetailModal = () => {
         <Image src={image}></Image>
         <div>
           <h2>{title}</h2>
-          <p>{"released in " + releaseYear}</p>
-          {/*     <p>{funFact}</p> */}
+
+          {/*        <p>{`Release date: ${releaseYear}`}</p> */}
           <p>
-            {(funFactStatus === "loading" && "Loading funFact") ||
-              (funFactStatus === "failed" && "failed funFact") ||
-              funFact}
+            <span>Release date: </span>
+            <br />
+            {releaseYear}
           </p>
-          {/*      <p>{funFactStatus === "failed" && "failed funFact"}</p> */}
+
+          {/*           <p>{`Fun fact: ${
+            (funFactStatus === "loading" && "Loading funFact") ||
+            (funFactStatus === "failed" && "failed funFact") ||
+            funFact
+          }`}</p> */}
+          <p className={`${funFactStatus === "failed" ? "hide" : ""}`}>
+            <span>Movie fact fun: </span>
+            <br />
+            {(funFactStatus === "loading" && "Loading funFact") || funFact}
+          </p>
           <p>{programType}</p>
           <p>{description}</p>
           <button onClick={() => dispatch(toggleIsOpen(isOpen))}>

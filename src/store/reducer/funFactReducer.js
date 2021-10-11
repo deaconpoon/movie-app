@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const baseURL = "http://numbersapdi.com/";
+const baseURL = "http://numbersapi.com/";
 
 export const getFunFact = createAsyncThunk(
   "funFact/getFunFact",

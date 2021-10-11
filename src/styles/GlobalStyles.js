@@ -105,6 +105,9 @@ const GlobalStyle = createGlobalStyle`
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: auto;
     }
+    .hide {
+        display: none;
+    }
 `;
 
 export default GlobalStyle;
