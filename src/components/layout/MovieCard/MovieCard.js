@@ -24,11 +24,8 @@ const MovieCard = ({ image, title, id, releaseYear }) => {
   //move to helper func
   const handleSelectedMovie = (id, releaseYear) => {
     dispatch(select(id));
-    console.log(id);
     dispatch(getFunFact(releaseYear));
-    console.log(releaseYear);
     dispatch(toggleIsOpen());
-    console.log(detailModalisOpen);
   };
 
   return (

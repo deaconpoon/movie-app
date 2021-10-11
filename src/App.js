@@ -8,7 +8,6 @@ import { Header, Footer, DetailModal } from "./components/layout";
 import { HomePage, ErrorPage, MoviesPage } from "./views";
 
 function App() {
-  const dispatch = useDispatch();
   const movies = useSelector((state) => state.movies.moviesList);
   const sortedMovies = movies.filter(
     ({ programType }) => programType === "movie"
@@ -24,8 +23,9 @@ function App() {
           <GlobalStyle />
           <div className="App layout">
             <Header />
-            <Switch>
-              <main className="grid">
+            <main className="grid">
+              <Switch>
+                <Route exact path="/" component={HomePage} />
                 <Route
                   exact
                   path="/movies"
@@ -36,13 +36,9 @@ function App() {
                   path="/series"
                   render={() => <MoviesPage moviesList={sortedSeries} />}
                 />
-
-                <Route exact path="/" component={HomePage} />
-                <Route path="*">
-                  <ErrorPage />
-                </Route>
-              </main>
-            </Switch>
+                <Route component={ErrorPage} />
+              </Switch>
+            </main>
             <Footer />
             <DetailModal />
           </div>
