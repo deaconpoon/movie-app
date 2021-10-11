@@ -21,14 +21,14 @@ const funFactSlice = createSlice({
     status: null,
   },
   extraReducers: {
-    [getFunFact.pending]: (state, action) => {
+    [getFunFact.pending]: (state) => {
       state.status = "loading";
     },
     [getFunFact.fulfilled]: (state, { payload }) => {
       state.status = "success";
       state.funFact = payload;
     },
-    [getFunFact.rejected]: (state, action) => {
+    [getFunFact.rejected]: (state) => {
       state.status = "failed";
     },
   },

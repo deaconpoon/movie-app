@@ -12,7 +12,14 @@ const moviesListWithID = moviesList.map((movie) => {
 const initialState = {
   moviesList: moviesListWithID,
   filteredMoviesList: null,
-  selectedMovie: {},
+  selectedMovie: [
+    {
+      title: "",
+      description: "",
+      programType: "",
+      images: { ["Poster Art"]: { url: " " } },
+    },
+  ],
 };
 const moviesSlice = createSlice({
   name: "movies",
