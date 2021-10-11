@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const baseURL = "http://numbersapi.com/";
+const baseURL = "http://numbersapdi.com/";
 
 export const getFunFact = createAsyncThunk(
   "funFact/getFunFact",
@@ -9,7 +9,6 @@ export const getFunFact = createAsyncThunk(
     const funFact = axios.get(`${baseURL + year}/year`).then((res) => {
       return res.data;
     });
-
     return funFact;
   }
 );

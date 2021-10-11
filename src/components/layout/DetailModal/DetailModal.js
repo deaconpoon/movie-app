@@ -13,6 +13,8 @@ const Container = styled.div`
 `;
 
 const Image = styled.img`
+  width: 100%;
+  height: 100%;
   object-fit: contain;
 `;
 
@@ -29,6 +31,7 @@ const DetailModal = () => {
     },
   } = selectedMovie[0];
   const funFact = useSelector((state) => state.funFact.funFact);
+  const funFactStatus = useSelector((state) => state.funFact.status);
   const isOpen = useSelector((state) => state.detailModal.isOpen);
 
   return (
@@ -38,7 +41,13 @@ const DetailModal = () => {
         <div>
           <h2>{title}</h2>
           <p>{"released in " + releaseYear}</p>
-          <p>{funFact}</p>
+          {/*     <p>{funFact}</p> */}
+          <p>
+            {(funFactStatus === "loading" && "Loading funFact") ||
+              (funFactStatus === "failed" && "failed funFact") ||
+              funFact}
+          </p>
+          {/*      <p>{funFactStatus === "failed" && "failed funFact"}</p> */}
           <p>{programType}</p>
           <p>{description}</p>
           <button onClick={() => dispatch(toggleIsOpen(isOpen))}>

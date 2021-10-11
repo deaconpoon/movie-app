@@ -1,6 +1,6 @@
 import { ThemeProvider } from "styled-components";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 import Theme from "./styles/Theme";
 import GlobalStyle from "./styles/GlobalStyles";
