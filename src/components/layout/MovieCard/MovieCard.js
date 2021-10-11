@@ -17,7 +17,10 @@ const Container = styled.li`
 const Image = styled.img`
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: fill;
+  @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+    height: 300px;
+  }
 `;
 
 const MovieCard = ({ image, title, id, releaseYear }) => {

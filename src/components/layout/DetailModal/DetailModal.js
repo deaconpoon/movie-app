@@ -45,7 +45,7 @@ const DetailModal = () => {
 
           {/*        <p>{`Release date: ${releaseYear}`}</p> */}
           <p>
-            <span>Release date: </span>
+            <span>Release Date: </span>
             <br />
             {releaseYear}
           </p>
@@ -56,12 +56,23 @@ const DetailModal = () => {
             funFact
           }`}</p> */}
           <p className={`${funFactStatus === "failed" ? "hide" : ""}`}>
-            <span>Movie fact fun: </span>
+            <span>Movie Fact Fun: </span>
             <br />
             {(funFactStatus === "loading" && "Loading funFact") || funFact}
           </p>
-          <p>{programType}</p>
-          <p>{description}</p>
+          {/*        <p>{programType}</p> */}
+          <p className="capitalize">
+            <span>Program type: </span>
+            <br />
+            {programType}
+          </p>
+          {/*          <p>{description}</p> */}
+          <p>
+            <span>Description: </span>
+            <br />
+            {description}
+          </p>
+
           <button onClick={() => dispatch(toggleIsOpen(isOpen))}>
             Close modal
           </button>

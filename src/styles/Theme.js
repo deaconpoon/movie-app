@@ -14,7 +14,8 @@ module.exports = {
     xs: "480px",
     sm: "768px",
     md: "992px",
-    lg: "1200px",
+    lg: "1100px",
+    xl: "1300px",
   },
   fonts: {
     primary: "inter, Arial, sans-serif",

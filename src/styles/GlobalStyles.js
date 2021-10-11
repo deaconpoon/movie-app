@@ -81,12 +81,11 @@ const GlobalStyle = createGlobalStyle`
         font-size: 1.75rem;
         line-height: 2.25rem;
         color: ${({ theme }) => theme.colors.primary};
-        margin-bottom: 3rem;
+
     }
 
     h4 {
         font-size: 1rem;
-        line-height: 1.5rem;
         font-weight: 400;
     }
 
@@ -102,11 +101,29 @@ const GlobalStyle = createGlobalStyle`
     }
     .grid {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr;
         grid-template-rows: auto;
+        gap: 1em;
+          @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+          @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+        }
+          @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
+            grid-template-columns: repeat(5, 1fr) ;
+          
+        }
+          @media (min-width: ${({ theme }) => theme.breakpoints.xl}) {
+            grid-template-columns: repeat(7, 1fr) ;
+          
+        }
     }
     .hide {
         display: none;
+    }
+    .capitalize {
+        text-transform: capitalize;
     }
 `;
 
