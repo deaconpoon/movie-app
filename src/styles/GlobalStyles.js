@@ -30,16 +30,16 @@ const GlobalStyle = createGlobalStyle`
         &.blur {
             overflow: hidden;
             #___gatsby #main-content > * {
-              filter: blur(5px) ;
-              transition: all .3s ease-out;
-              pointer-events: none;
-              user-select: none;
+            filter: blur(5px) ;
+            transition: all .3s ease-out;
+            pointer-events: none;
+            user-select: none;
             }
-          }
+            }
         }
         &.splashScreen {
-              position: fixed;
-              overflow: hidden;
+            position: fixed;
+            overflow: hidden;
         }
 
     a {
@@ -50,7 +50,7 @@ const GlobalStyle = createGlobalStyle`
         cursor: pointer;
         &:hover,
         &:focus {
-          outline: 0;
+            outline: 0;
         }
     }
 
@@ -94,21 +94,48 @@ const GlobalStyle = createGlobalStyle`
         border-width: .05rem;
         color: ${({ theme }) => theme.colors.tertiary};
         opacity: 0.1;
-      }
+    }
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+    }
     .layout {
-        width: 80vw;
-        margin: auto;
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap; 
+    }
+    .header {
+    background-color: #cdcdcd;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    }
+    .footer {
+    background-color: #cdcdcd;
+    flex-shrink: 0;
+    }
+    .body {
+        flex-grow: 1 ;
+        border: 1px solid black;
+        padding: 8px;
+        overflow: auto;
+        min-height: 2em;
     }
     .grid {
+
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: auto;
         gap: 1em;
           @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: repeat(3, 1fr);
         }
           @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
-            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-columns: repeat(4, 1fr);
         }
           @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
             grid-template-columns: repeat(5, 1fr) ;
@@ -118,6 +145,9 @@ const GlobalStyle = createGlobalStyle`
             grid-template-columns: repeat(7, 1fr) ;
           
         }
+    }
+    .logo {
+        width: 20%;
     }
     .hide {
         display: none;

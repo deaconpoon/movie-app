@@ -1,7 +1,6 @@
 import { ThemeProvider } from "styled-components";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useSelector } from "react-redux";
-
 import Theme from "./styles/Theme";
 import GlobalStyle from "./styles/GlobalStyles";
 import { Header, Footer, DetailModal } from "./components/layout";
@@ -21,9 +20,9 @@ function App() {
       <Router>
         <ThemeProvider theme={Theme}>
           <GlobalStyle />
-          <div className="App layout">
+          <div className="layout">
             <Header />
-            <main className="grid">
+            <main className="body">
               <Switch>
                 <Route exact path="/" component={HomePage} />
                 <Route

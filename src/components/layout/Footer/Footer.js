@@ -18,7 +18,7 @@ const labels = [
 const Footer = () => {
   return (
     <>
-      <Wrapper>
+      <Wrapper className="footer">
         <div>
           {labels.map((label) => (
             <Label>{label}</Label>
