@@ -44,8 +44,6 @@ const GlobalStyle = createGlobalStyle`
 
     a {
         display: inline-block;
-        text-decoration: none;
-        text-decoration-skip-ink: auto;
         color: inherit;
         cursor: pointer;
         &:hover,
@@ -107,10 +105,9 @@ const GlobalStyle = createGlobalStyle`
         flex-direction: column;
         flex-wrap: nowrap; 
     }
-
     .body {
         flex-grow: 1 ;
-        border: 1px solid black;
+
         padding: 8px;
         overflow: auto;
         min-height: 2em;
@@ -122,23 +119,21 @@ const GlobalStyle = createGlobalStyle`
         grid-template-rows: auto;
         gap: 1em;
           @media (min-width: ${({ theme }) => theme.breakpoints.sm}) {
-            grid-template-columns: repeat(3, 1fr);
-        }
-          @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
             grid-template-columns: repeat(4, 1fr);
         }
+          @media (min-width: ${({ theme }) => theme.breakpoints.md}) {
+            grid-template-columns: repeat(5, 1fr);
+        }
           @media (min-width: ${({ theme }) => theme.breakpoints.lg}) {
-            grid-template-columns: repeat(5, 1fr) ;
+            grid-template-columns: repeat(6, 1fr) ;
           
         }
           @media (min-width: ${({ theme }) => theme.breakpoints.xl}) {
-            grid-template-columns: repeat(7, 1fr) ;
+            grid-template-columns: repeat(8, 1fr) ;
           
         }
     }
-    .logo {
-        width: 20%;
-    }
+
     .hide {
         display: none;
     }

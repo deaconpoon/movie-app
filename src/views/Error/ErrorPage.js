@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 const ErrorPage = () => {
   return (
     <div>
-      ErrorPage: Go back <Link to="/">Home</Link>
+      Sorry! We could not find what your are looking for. Go back to{" "}
+      <Link to="/">Home</Link>
     </div>
   );
 };

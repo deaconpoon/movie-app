@@ -1,9 +1,7 @@
 import styled from "styled-components";
 import "./Footer.scss";
 
-const Wrapper = styled.footer`
-  background-color: grey;
-`;
+const Wrapper = styled.footer``;
 
 const Label = styled.a``;
 

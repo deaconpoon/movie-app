@@ -8,8 +8,6 @@ import { MovieCard } from "../";
 const Container = styled.div`
   width: 100%;
   height: 50%;
-  background-color: lightblue;
-
   display: inline-flex;
   flex-direction: column;
 `;
@@ -43,37 +41,31 @@ const DetailModal = () => {
         <div>
           <h2>{title}</h2>
 
-          {/*        <p>{`Release date: ${releaseYear}`}</p> */}
           <p>
             <span>Release Date: </span>
             <br />
             {releaseYear}
           </p>
-
-          {/*           <p>{`Fun fact: ${
-            (funFactStatus === "loading" && "Loading funFact") ||
-            (funFactStatus === "failed" && "failed funFact") ||
-            funFact
-          }`}</p> */}
           <p className={`${funFactStatus === "failed" ? "hide" : ""}`}>
             <span>Movie Fact Fun: </span>
             <br />
             {(funFactStatus === "loading" && "Loading funFact") || funFact}
           </p>
-          {/*        <p>{programType}</p> */}
           <p className="capitalize">
             <span>Program type: </span>
             <br />
             {programType}
           </p>
-          {/*          <p>{description}</p> */}
           <p>
             <span>Description: </span>
             <br />
             {description}
           </p>
 
-          <button onClick={() => dispatch(toggleIsOpen(isOpen))}>
+          <button
+            style={{ marginBottom: "1em" }}
+            onClick={() => dispatch(toggleIsOpen(isOpen))}
+          >
             Close modal
           </button>
         </div>

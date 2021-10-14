@@ -38,7 +38,7 @@ function App() {
                 <Route component={ErrorPage} />
               </Switch>
             </main>
-            <Footer />
+            {/*        <Footer /> */}
             <DetailModal />
           </div>
         </ThemeProvider>
