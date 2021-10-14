@@ -11,13 +11,21 @@ https://keen-northcutt-0619d7.netlify.app
 - Built with React.
 - React Redux Toolkit for state management.
 
-## 🤔 Challenges
-
-## 💪🏼 Improvement
-
 ## 🧪 Testing
 
 - End to end testing with Cypress.
+
+## 🤔 Challenges
+
+- Deploy on Oracle Cloud Infrastructure
+
+## 💪🏼 Improvement
+
+- Typescript
+- Unit test
+- CI with Travis CI
+- Use async to handle JSON retrieval to provide pending state for skeleton loader
+- Deploy on OCI
 
 ## 🚀 To start
 
