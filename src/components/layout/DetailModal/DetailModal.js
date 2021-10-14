@@ -53,13 +53,13 @@ const DetailModal = () => {
             {releaseYear}
           </p>
           <p
+            className={`${funFactStatus === "success" ? "" : "hide"}`}
             aria-label="Movie's fun fact"
             data-testId="movie-modal-funFact"
-            className={`${funFactStatus === "failed" ? "hide" : ""}`}
           >
             <span>Movie Fact Fun: </span>
             <br />
-            {(funFactStatus === "loading" && "Loading funFact") || funFact}
+            {funFact}
           </p>
           <p
             aria-label="Movie's program type"

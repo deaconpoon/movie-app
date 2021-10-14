@@ -137,6 +137,7 @@ const GlobalStyle = createGlobalStyle`
     .hide {
         display: none;
     }
+
     .capitalize {
         text-transform: capitalize;
     }

@@ -1,6 +1,6 @@
 /// <reference types="cypress" />
 
-describe("Movies and series list", () => {
+describe("Movies and series list", async () => {
   it("Render movies list correctly", () => {
     cy.visit("/movies");
     cy.get('[data-testid="movie-card"]').should("be.visible");
@@ -21,6 +21,9 @@ describe("Movies and series list", () => {
     cy.get('[data-testid="movie-modal-title"]').should("be.visible");
     cy.get('[data-testid="movie-modal-releaseDate"]').should("be.visible");
     cy.get('[data-testid="movie-modal-funFact"]').should("be.visible");
+    cy.get('[data-testid="movie-modal-funFact"]')
+      .first()
+      .should("not.contain", "Sorry, fun fact is not availabe");
     cy.get('[data-testid="movie-modal-programType"]').should("be.visible");
     cy.get('[data-testid="movie-modal-description"]').should("be.visible");
     cy.get('[data-testid="movie-modal-button-close"]').should("be.visible");
