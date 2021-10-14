@@ -106,7 +106,7 @@ const GlobalStyle = createGlobalStyle`
         flex-wrap: nowrap; 
     }
     .body {
-        flex-grow: 1 ;
+        flex-grow: 2 ;
 
         padding: 8px;
         overflow: auto;

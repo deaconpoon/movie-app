@@ -8,21 +8,22 @@ const Header = () => {
   return (
     <header className="header">
       <img
-        data-testId="logo"
+        alt="logo"
+        data-testid="logo"
         className="logo"
         onClick={() => history.push("/")}
         src={movie}
       />
       <div>
         <Link
-          data-testId="header-movie-link"
+          data-testid="header-movie-link"
           className="movieLink"
           to="/movies"
         >
           Movie
         </Link>
         <Link
-          data-testId="header-series-link"
+          data-testid="header-series-link"
           className="movieLink"
           to="/series"
         >

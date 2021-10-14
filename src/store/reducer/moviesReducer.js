@@ -6,7 +6,7 @@ const moviesList = JSON.parse(JSON.stringify(MoviesList)).entries;
 
 const moviesListWithID = moviesList.map((movie) => {
   const id = uuidv4();
-  return { ...movie, ["id"]: id };
+  return { ...movie, id: id };
 });
 
 const initialState = {
@@ -17,7 +17,7 @@ const initialState = {
       title: "",
       description: "",
       programType: "",
-      images: { ["Poster Art"]: { url: " " } },
+      images: { "Poster Art": { url: " " } },
     },
   ],
 };
@@ -38,7 +38,7 @@ const moviesSlice = createSlice({
   },
 });
 
-const { actions, reducer } = moviesSlice;
+const { actions } = moviesSlice;
 
 export const { sort, select } = actions;
 

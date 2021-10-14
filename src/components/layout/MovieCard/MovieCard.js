@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { select } from "../../../store/reducer/moviesReducer";
 import { getFunFact } from "../../../store/reducer/funFactReducer";
 import { toggleIsOpen } from "../../../store/reducer/detailModalReducer";
@@ -45,12 +45,12 @@ const MovieCard = ({ image, title, id, releaseYear }) => {
 
   return (
     <Container
-      data-testId="movie-card"
+      data-testid="movie-card"
       key={id}
       onClick={() => handleSelectedMovie(id, releaseYear)}
     >
-      <Image data-testId="movie-card-image" src={image}></Image>
-      <SubTitle data-testId="movie-card-title">{title}</SubTitle>
+      <Image data-testid="movie-card-image" src={image}></Image>
+      <SubTitle data-testid="movie-card-title">{title}</SubTitle>
     </Container>
   );
 };

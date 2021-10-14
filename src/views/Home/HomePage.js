@@ -1,5 +1,4 @@
-import { MoviesList } from "../";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 import styled from "styled-components";
 
@@ -23,20 +22,20 @@ const Container = styled.li`
       0 22.3px 17.9px rgba(0, 0, 0, 0.082), 0 41.8px 33.4px rgba(0, 0, 0, 0.096),
       0 100px 80px rgba(0, 0, 0, 0.12);
   }
-`; //
+`;
 
 const HomePage = () => {
   const history = useHistory();
   return (
     <>
       <Container
-        data-testId="home-movies-card"
+        data-testid="home-movies-card"
         onClick={() => history.push("movies")}
       >
         Movies
       </Container>
       <Container
-        data-testId="home-series-card"
+        data-testid="home-series-card"
         onClick={() => history.push("series")}
       >
         Series

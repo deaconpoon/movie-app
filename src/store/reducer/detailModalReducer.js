@@ -13,7 +13,7 @@ const detailModalSlice = createSlice({
   },
 });
 
-const { actions, reducer } = detailModalSlice;
+const { actions } = detailModalSlice;
 
 export const { toggleIsOpen } = actions;
 

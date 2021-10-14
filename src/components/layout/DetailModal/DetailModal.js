@@ -1,9 +1,7 @@
 import ReactModal from "react-modal";
 import styled from "styled-components";
-/* import { Button, Header, Image, Modal } from "semantic-ui-react"; */
 import { useSelector, useDispatch } from "react-redux";
 import { toggleIsOpen } from "../../../store/reducer/detailModalReducer";
-import { MovieCard } from "../";
 
 const Container = styled.div`
   width: 100%;
@@ -27,7 +25,7 @@ const DetailModal = () => {
     programType,
     releaseYear,
     images: {
-      ["Poster Art"]: { url: image },
+      "Poster Art": { url: image },
     },
   } = selectedMovie[0];
   const funFact = useSelector((state) => state.funFact.funFact);

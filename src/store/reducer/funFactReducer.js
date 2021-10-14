@@ -32,6 +32,5 @@ const funFactSlice = createSlice({
     },
   },
 });
-const { actions, reducer } = funFactSlice;
 
 export default funFactSlice.reducer;

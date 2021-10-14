@@ -3,7 +3,9 @@ import "./Footer.scss";
 
 const Wrapper = styled.footer``;
 
-const Label = styled.a``;
+const Label = styled.a`
+  margin: 1em;
+`;
 
 //move to constant
 const labels = [
@@ -20,11 +22,13 @@ const Footer = () => {
       <Wrapper className="footer">
         <div>
           {labels.map((label) => (
-            <Label>{label}</Label>
+            <Label key={label}>{label}</Label>
           ))}
         </div>
         <div>
-          <p>Copyright © 2016 DEMO Streaming. All Rights Reserved.</p>
+          <p style={{ margin: "1em" }}>
+            Copyright © 2016 DEMO Streaming. All Rights Reserved.
+          </p>
         </div>
       </Wrapper>
     </>
