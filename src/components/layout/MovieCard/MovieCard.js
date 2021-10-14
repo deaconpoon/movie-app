@@ -45,12 +45,19 @@ const MovieCard = ({ image, title, id, releaseYear }) => {
 
   return (
     <Container
+      aria-label="Movie's card"
       data-testid="movie-card"
       key={id}
       onClick={() => handleSelectedMovie(id, releaseYear)}
     >
-      <Image data-testid="movie-card-image" src={image}></Image>
-      <SubTitle data-testid="movie-card-title">{title}</SubTitle>
+      <Image
+        aria-label="Movie's card image"
+        data-testid="movie-card-image"
+        src={image}
+      ></Image>
+      <SubTitle aria-label="Movie's card title" data-testid="movie-card-title">
+        {title}
+      </SubTitle>
     </Container>
   );
 };

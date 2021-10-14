@@ -23,14 +23,14 @@ const DetailPage = ({
   releaseYear,
 }) => {
   return (
-    <ReactModal isOpen={isOpen}>
+    <ReactModal aria-label="Movie's detail modal" isOpen={isOpen}>
       <Container>
-        <Image src={image}></Image>
+        <Image aria-label="Movie's detail image" src={image}></Image>
         <div>
-          <h2>{title}</h2>
-          <p>{releaseYear}</p>
-          {/*           <p>{funFact}</p> */}
-          <p>{description}</p>
+          <h2 aria-label="Movie's detail title">{title}</h2>
+          <p aria-label="Movie's detail release year">{releaseYear}</p>
+          <p aria-label="Movie's detail fun fact">{funFact}</p>
+          <p aria-label="Movie's detail description">{description}</p>
         </div>
       </Container>
     </ReactModal>

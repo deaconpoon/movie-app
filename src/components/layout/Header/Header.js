@@ -8,6 +8,7 @@ const Header = () => {
   return (
     <header className="header">
       <img
+        aria-label="Header's logo"
         alt="logo"
         data-testid="logo"
         className="logo"
@@ -16,6 +17,7 @@ const Header = () => {
       />
       <div>
         <Link
+          aria-label="Link to movie page"
           data-testid="header-movie-link"
           className="movieLink"
           to="/movies"
@@ -23,6 +25,7 @@ const Header = () => {
           Movie
         </Link>
         <Link
+          aria-label="Link to series page"
           data-testid="header-series-link"
           className="movieLink"
           to="/series"
