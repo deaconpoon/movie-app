@@ -36,33 +36,36 @@ const DetailModal = () => {
 
   return (
     <ReactModal isOpen={isOpen}>
-      <Container>
-        <Image src={image}></Image>
+      <Container data-testId="movie-modal">
+        <Image data-testId="movie-modal-image" src={image}></Image>
         <div>
-          <h2>{title}</h2>
-
-          <p>
+          <h2 data-testId="movie-modal-title">{title}</h2>
+          <p data-testId="movie-modal-releaseDate">
             <span>Release Date: </span>
             <br />
             {releaseYear}
           </p>
-          <p className={`${funFactStatus === "failed" ? "hide" : ""}`}>
+          <p
+            data-testId="movie-modal-funFact"
+            className={`${funFactStatus === "failed" ? "hide" : ""}`}
+          >
             <span>Movie Fact Fun: </span>
             <br />
             {(funFactStatus === "loading" && "Loading funFact") || funFact}
           </p>
-          <p className="capitalize">
+          <p data-testId="movie-modal-programType" className="capitalize">
             <span>Program type: </span>
             <br />
             {programType}
           </p>
-          <p>
+          <p data-testId="movie-modal-description">
             <span>Description: </span>
             <br />
             {description}
           </p>
 
           <button
+            data-testId="movie-modal-button-close"
             style={{ marginBottom: "1em" }}
             onClick={() => dispatch(toggleIsOpen(isOpen))}
           >

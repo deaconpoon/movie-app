@@ -44,9 +44,13 @@ const MovieCard = ({ image, title, id, releaseYear }) => {
   };
 
   return (
-    <Container key={id} onClick={() => handleSelectedMovie(id, releaseYear)}>
-      <Image src={image}></Image>
-      <SubTitle>{title}</SubTitle>
+    <Container
+      data-testId="movie-card"
+      key={id}
+      onClick={() => handleSelectedMovie(id, releaseYear)}
+    >
+      <Image data-testId="movie-card-image" src={image}></Image>
+      <SubTitle data-testId="movie-card-title">{title}</SubTitle>
     </Container>
   );
 };
