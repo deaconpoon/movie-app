@@ -22,11 +22,13 @@ const Footer = () => {
       <Wrapper className="footer">
         <div>
           {labels.map((label) => (
-            <Label key={label}>{label}</Label>
+            <Label aria-label="Footer's label" key={label}>
+              {label}
+            </Label>
           ))}
         </div>
         <div>
-          <p style={{ margin: "1em" }}>
+          <p aria-label="Footer's copyright" style={{ margin: "1em" }}>
             Copyright © 2016 DEMO Streaming. All Rights Reserved.
           </p>
         </div>

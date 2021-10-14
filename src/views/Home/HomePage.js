@@ -29,12 +29,14 @@ const HomePage = () => {
   return (
     <>
       <Container
+        aria-label="Link to movies page"
         data-testid="home-movies-card"
         onClick={() => history.push("movies")}
       >
         Movies
       </Container>
       <Container
+        aria-label="Link to series page"
         data-testid="home-series-card"
         onClick={() => history.push("series")}
       >
