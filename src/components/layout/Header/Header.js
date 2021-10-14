@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import movie from "../../../asset/movie.svg";
+import "./Header.scss";
 
 const Header = () => {
   const history = useHistory();
@@ -8,8 +9,12 @@ const Header = () => {
     <header className="header">
       <img className="logo" onClick={() => history.push("/")} src={movie} />
       <div>
-        <Link to="/movies">movie</Link>
-        <Link to="/series">series</Link>
+        <Link className="movieLink" to="/movies">
+          Movie
+        </Link>
+        <Link className="movieLink" to="/series">
+          Series
+        </Link>
       </div>
     </header>
   );

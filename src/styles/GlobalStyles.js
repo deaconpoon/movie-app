@@ -107,17 +107,7 @@ const GlobalStyle = createGlobalStyle`
         flex-direction: column;
         flex-wrap: nowrap; 
     }
-    .header {
-    background-color: #cdcdcd;
-    flex-shrink: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    }
-    .footer {
-    background-color: #cdcdcd;
-    flex-shrink: 0;
-    }
+
     .body {
         flex-grow: 1 ;
         border: 1px solid black;

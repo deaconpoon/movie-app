@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import "./Footer.scss";
 
 const Wrapper = styled.footer`
   background-color: grey;
