@@ -6,6 +6,7 @@ const MoviesPage = ({ moviesList }) => {
       <ul className="grid">
         {moviesList.map(({ title, images, id, releaseYear }) => (
           <MovieCard
+            aria-label="movie card"
             key={id}
             id={id}
             title={title}
