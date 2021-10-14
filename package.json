@@ -29,8 +29,8 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "craco start",
-    "build": "craco build",
+    "start": "PORT=80 craco start",
+    "build": "react-script build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "cypress:open": "cypress open"
