@@ -1,6 +1,4 @@
-https://naughty-meitner-c101d7.netlify.app
-
-# 📝 Textify is a web-based, free-text note organizer
+https://keen-northcutt-0619d7.netlify.app
 
 ## ✅ Features
 
