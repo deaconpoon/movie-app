@@ -7,12 +7,25 @@ const Header = () => {
   const history = useHistory();
   return (
     <header className="header">
-      <img className="logo" onClick={() => history.push("/")} src={movie} />
+      <img
+        data-testId="logo"
+        className="logo"
+        onClick={() => history.push("/")}
+        src={movie}
+      />
       <div>
-        <Link className="movieLink" to="/movies">
+        <Link
+          data-testId="header-movie-link"
+          className="movieLink"
+          to="/movies"
+        >
           Movie
         </Link>
-        <Link className="movieLink" to="/series">
+        <Link
+          data-testId="header-series-link"
+          className="movieLink"
+          to="/series"
+        >
           Series
         </Link>
       </div>

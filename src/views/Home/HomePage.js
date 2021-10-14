@@ -29,8 +29,18 @@ const HomePage = () => {
   const history = useHistory();
   return (
     <>
-      <Container onClick={() => history.push("movies")}>Movies</Container>
-      <Container onClick={() => history.push("series")}>Series</Container>
+      <Container
+        data-testId="home-movies-card"
+        onClick={() => history.push("movies")}
+      >
+        Movies
+      </Container>
+      <Container
+        data-testId="home-series-card"
+        onClick={() => history.push("series")}
+      >
+        Series
+      </Container>
     </>
   );
 };

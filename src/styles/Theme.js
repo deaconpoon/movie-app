@@ -11,7 +11,7 @@ module.exports = {
     background: "#ffffff",
   },
   breakpoints: {
-    xs: "480px",
+    xs: "300px",
     sm: "768px",
     md: "992px",
     lg: "1100px",
